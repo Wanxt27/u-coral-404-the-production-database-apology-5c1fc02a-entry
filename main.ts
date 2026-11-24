@@ -48,7 +48,9 @@ function main(): void {
   if (!Buffer.from(written, "utf8").equals(Buffer.from(ENTRY, "utf8"))) {
     throw new Error("entry.txt bytes do not match the apology line");
   }
-  console.log(`${[...written].length} chars, one line:`);
+  console.log(
+    `${[...written].length} chars, ${Buffer.byteLength(written, "utf8")} bytes, one line:`,
+  );
   console.log(written);
 }
 
